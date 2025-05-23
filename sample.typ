@@ -39,7 +39,7 @@
   date: "二〇二×年× 月",
   date2: "     2001    年   1  月   1    日",
   author_signature_path: "/assets/whu.png",
-  mentor_signature_path: "/assets/whu.png",
+  mentor_signature_path: ("/assets/whu.png", "/assets/whu.png","/assets/whu.png"), // 后两个路径为占位符，可以无视，或者如果你有三个指导教师的话会游泳，见/pages/declaration.typ
 )
 
 

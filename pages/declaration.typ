@@ -19,6 +19,8 @@
     }
 
     align(right)[
+      #move(dx: 0pt)[ //向右把这一行推动0pt，你可以推出右页边距
+      // 第一个 grid：用于放置签名，四列结构
       #grid(
         columns: (60pt, 72pt, 84pt, 72pt),
         rows: (20pt),
@@ -29,12 +31,22 @@
         },
         
         text_block(8pt, "指导老师签名："),
-        if not anonymous {image(mentor_signature_path, fit: "contain")}
-        else{
+        if not anonymous {               // 签名将自动超过页边距
+            grid.cell(
+              stack(//stack专门用于水平放置
+                      dir: ltr,         // left-to-right
+                      spacing: 0pt,     // 图之间的间距
+                      image(mentor_signature_path.at(0), width: 50pt, ),
+                      image(mentor_signature_path.at(1), width: 50pt, ),//注释掉这一行就少一个老师签名
+                      image(mentor_signature_path.at(2), width: 50pt, )//注释掉这一行又少一个老师签名
+                    ), //调整图片的大小放下不同老师的签名。
+            align: left
+          )
+        } else {
           text_block(8pt, "█████████")
         }
       )
-      #grid(
+      #grid( // 第二个 grid：用于放置日期，两列结构
         columns: (60pt, 228pt),
         text_block(0pt, "日　　期："),
         if not anonymous {
@@ -51,6 +63,7 @@
         },
 
       )
+    ]
     ]
   }
 
