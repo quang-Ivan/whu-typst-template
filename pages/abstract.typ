@@ -11,6 +11,7 @@
   weight: "bold",
   content
 ) = {
+  set par(justify: true)
   set heading(level: 1, numbering: none)
   show <_abstract_>: {
     align(center)[
