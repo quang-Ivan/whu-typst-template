@@ -4,6 +4,7 @@
 #let _set_figure(body) ={
     // 设置前缀
     show figure.where(kind: image): set figure(supplement: [图])
+    show figure.where(kind: image): set figure(gap: 2em)
     show figure.where(kind: table): set figure(supplement: [表])
 
     show figure.where(kind: table): set figure.caption(position: top)
